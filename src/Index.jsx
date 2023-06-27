@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 import "./styles.scss";
 import Todo from "./components/todo/todo";
 import TodoForm from "./components/todoForm/TodoForm";
@@ -23,9 +23,21 @@ function App() {
       category: "Pessoal",
       isCompleted: false,
     },
+  ]);
 
-  ])
+  const addTodo = (text, category) => {
+    const newTodos = [
+      ...todos,
+      {
+        id: Math.floor(Math.random() * 10000),
+        text,
+        category,
+        isCompleted: false,
+      },
+    ];
 
+    setTodos(newTodos);
+  };
 
   return (
     <div className="App">
@@ -35,9 +47,9 @@ function App() {
           <Todo key={todo.id} todo={todo} />
         ))}
       </div>
-      <TodoForm />
+      <TodoForm  addTodo={addTodo}/>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
