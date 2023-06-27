@@ -86,4 +86,15 @@ body {
         }
 
     }
+
+    .search {
+        
+        input {
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #DDD;
+            border-radius: 3px;
+            width: 100%;
+        }
+    }
 }
